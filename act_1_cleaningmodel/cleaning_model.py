@@ -1,6 +1,6 @@
 import mesa
 
-class Roomba(mesa.Agent):
+class CleaningAgent(mesa.Agent):
     def __init__(self, unique_id, model):
         super().__init__(unique_id, model)
         self.counter = 0
@@ -38,7 +38,7 @@ class CleaningModel(mesa.Model):
         self.celdas_suc = (width*height)-self.celdas_lim #Calcula numero de celdas sucias
 
         for i in range(self.num_agents):
-            a = Roomba(i, self)
+            a = CleaningAgent(i, self)
             self.schedule.add(a)
             x = 1
             y = 1
